@@ -114,18 +114,27 @@ SynaxisA/
 
 ---
 
-## Getting Started  
+# Getting Started  
+## Clone repo
+  ```
+  git clone https://github.com/rayeberechi/SynaxisA.git
+  cd SynaxisA
+  ```
 
-1. **Clone Repo**  
-   ```bash
-   git clone https://github.com/rayeberechi/SynaxisA
-   ```
+## Create branch for your section
+  ```
+  git checkout -b yourname-section
+  ```
 
-2. **Open in Browser**
+## Work, then push
+  ```
+  git add .
+  git commit -m "feat: built tech stack section"
+  git push origin yourname-section
+  ```
 
-3. **Edit Safely:** work and push only to your branch.
-
-4. **Submit PR** – when done, for review and merge.
+## Submit PR
+- When done, for review and merge.
 
 ---
 
