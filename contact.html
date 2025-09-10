@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style> 
+        .contact{
+            background-color: #F0F0F0;
+            display: flex;
+            gap: 20px;
+            font:  Inter, Poppins, sans-serif;
+        }
+        .info{
+           
+            padding: 1rem;
+        }
+        address{
+        margin: 5px;
+        padding: 7px;
+        border-radius: 15px;
+        height: auto;
+       }
+       a{
+        text-decoration: none;
+        color: rgb(22, 19, 19);
+       }
+       a:hover{
+        color: blue;
+       }
+       
+       input{
+        border: 1px solid black;
+        border-radius: 5px;
+        gap: 5px;
+         padding: 10px;
+         margin-bottom: 10px; 
+       }
+       input:hover{
+        cursor:text;
+       }
+       button{
+        border-radius: 5px;
+        padding: 4px;
+        cursor: pointer;
+       }
+       button:hover{
+        background-color: rgb(164, 164, 165);
+       }
+
+      
+    </style>
+    
+</head>
+<body>
+    <div class="contact">
+        <div class="info"><h3>Let's discuss your project</h3><p>we are excited to hear 
+            about your project and explore how we can work together to
+              bring your ideas to life. Please fill out the form
+               below or reach out directly, and I’ll get back
+             to you as soon as possible. Let’s create something amazing!
+        </p>
+       <span>
+        <address>
+            <p>Address:<br> Across Nigeria</p>
+        </address>
+       </span>
+        <span>
+        <address>
+            <p>My Email:<br> <a href="mailto:ourmail@gmail.com">
+                ourmail@gmail.com</a></p>
+        </address>
+       </span>
+        <span>
+        <address>
+            <p>Call us on:<br> <a href="tel:+234000*******"
+                >+234000*******</a></p>
+        </address>
+       </span>
+        </div>
+        <div class="form">
+        <form action="fill"><p style="text-align: center;">Please fill out the form below
+             with your details and a brief message
+              about your project. I’ll review your information
+               and get back to you promptly to discuss how we can 
+               collaborate. Your privacy is important,
+             and your information will be kept confidential.</p>
+            
+            <input type="text" placeholder="Name:"/><br>
+            <input type="email" placeholder="Email:"/><br>
+            <input type="text" placeholder="Location:"/><br>
+             <input type="number" placeholder="Budget:"/>
+              <input type="text" placeholder="Subject:"/><br>
+            <textarea placeholder="Message" rows="2" >
+            </textarea><br>
+            <button>Submit
+            </button>
+
+
+
+        </form>
+
+
+        </div>
+    </div>
+</body>
+</html>
