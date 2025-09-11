@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <style> 
-        .contact{
-            background-color: #F0F0F0;
-            display: flex;
-            gap: 20px;
-            font:  Inter, Poppins, sans-serif;
-        }
-        .info{
-           
-            padding: 1rem;
-        }
-        address{
-        margin: 5px;
-        padding: 7px;
-        border-radius: 15px;
-        height: auto;
-       }
-       a{
-        text-decoration: none;
-        color: rgb(22, 19, 19);
-       }
-       a:hover{
-        color: blue;
-       }
-       
-       input{
-        border: 1px solid black;
-        border-radius: 5px;
-        gap: 5px;
-         padding: 10px;
-         margin-bottom: 10px; 
-       }
-       input:hover{
-        cursor:text;
-       }
-       button{
-        border-radius: 5px;
-        padding: 4px;
-        cursor: pointer;
-       }
-       button:hover{
-        background-color: rgb(164, 164, 165);
-       }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SynaxisA Portfolio</title>
 
-      
-    </style>
-    
-</head>
-<body>
+    <link rel="icon" type="image/png" href="assets/logo-favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-left">
+        <img
+          src="assets/SynaxisA-logo-light-theme.png"
+          alt="Synaxis Logo"
+          class="logo"
+        />
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="techstack.html">Tech Stack</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <!-- Theme switcher is a div that will be toggled by JS -->
+        <div
+          class="theme-switcher"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+          title="Toggle theme"
+        ></div>
+      </div>
+    </header>
     <div class="contact">
         <div class="info"><h3>Let's discuss your project</h3><p>we are excited to hear 
             about your project and explore how we can work together to
@@ -79,29 +74,106 @@
        </span>
         </div>
         <div class="form">
-        <form action="fill"><p style="text-align: center;">Please fill out the form below
+        <form action="fill">
+            <h3 class="p">Contact Us</h3><p class="p">Please fill out the form below
              with your details and a brief message
               about your project. I’ll review your information
                and get back to you promptly to discuss how we can 
                collaborate. Your privacy is important,
              and your information will be kept confidential.</p>
-            
+            <div class="formin">
             <input type="text" placeholder="Name:"/><br>
             <input type="email" placeholder="Email:"/><br>
             <input type="text" placeholder="Location:"/><br>
              <input type="number" placeholder="Budget:"/>
-              <input type="text" placeholder="Subject:"/><br>
+              <br>
             <textarea placeholder="Message" rows="2" >
             </textarea><br>
             <button>Submit
             </button>
+            </div>
 
 
 
         </form>
 
 
+
         </div>
     </div>
-</body>
+ <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <img
+              src="assets/SynaxisA-logo-light-theme.png"
+              alt="SynaxisA Logo"
+              class="logo"
+            />
+          </div>
+          <div class="footer-contact">
+            <p>+234 81 123-4567-89</p>
+            <p>info@synaxisa.com</p>
+          </div>
+          <div class="social-icons">
+            <a href="https://github.com" aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://twitter.com" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://linkedin.com" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <ul class="footer-bottom-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="techstack.html">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <p class="copyright">
+            Copyright 2025 SynaxisA. All rights reserved. Dev by SynaxisA Team
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeSwitcher = document.querySelector(".theme-switcher");
+        if (!themeSwitcher) return;
+
+        const toggleTheme = () => {
+          document.body.classList.toggle("dark-mode");
+          // persist choice
+          try {
+            localStorage.setItem(
+              "synaxisa-darkmode",
+              document.body.classList.contains("dark-mode") ? "1" : "0"
+            );
+          } catch (e) {}
+        };
+
+        themeSwitcher.addEventListener("click", toggleTheme);
+
+        themeSwitcher.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleTheme();
+          }
+        });
+
+        // restore saved theme
+        try {
+          if (localStorage.getItem("synaxisa-darkmode") === "1") {
+            document.body.classList.add("dark-mode");
+          }
+        } catch (e) {}
+      });
+    </script>
+  </body>
 </html>
