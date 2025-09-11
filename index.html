@@ -1,19 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SynaxisA Portfolio</title>
-  
-  <link rel="icon" type="image/png" href="assets/logo-favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
-  <h1>Welcome to SynaxisA Portfolio</h1>
-  <p>This is a boilerplate setup. Start building your section!</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SynaxisA Portfolio</title>
 
-</body>
+    <link rel="icon" type="image/png" href="assets/logo-favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-left">
+        <img
+          src="assets/SynaxisA-logo-light-theme.png"
+          alt="Synaxis Logo"
+          class="logo"
+        />
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="techstack.html">Tech Stack</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <!-- Theme switcher is a div that will be toggled by JS -->
+        <div
+          class="theme-switcher"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+          title="Toggle theme"
+        ></div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>
+            Welcome to the <br /><span>SynaxisA Group Portfolio</span>
+          </h1>
+          <p>
+            We are a team of 5 working together to build a collaborative
+            developer portfolio that reflects our skills, creativity, and
+            teamwork.
+          </p>
+        </div>
+        <div class="hero-image">
+          <img
+            src="assets/logo-favicon.png"
+            alt="Group Profile Picture"
+            class="grp-pic"
+          />
+        </div>
+      </section>
+
+      <!-- Tech Stack Section -->
+      <section class="tech-stack-section">
+        <h2 class="section-heading">Our Tech Stack</h2>
+        <p class="section-subheading">
+          Technologies we have been working with recently
+        </p>
+        <div class="tech-grid">
+          <img
+            src="assets/Figma Assets/vscode-icons_file-type-html.svg"
+            alt="HTML"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/vscode-icons_file-type-css.svg"
+            alt="CSS"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/vscode-icons_file-type-js-official.svg"
+            alt="JavaScript"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/logos_react.svg"
+            alt="React"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/cib_greensock.svg"
+            alt="Greensock"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/vscode-icons_file-type-vscode-1.svg"
+            alt="VScode"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/logos_bootstrap.png"
+            alt="Bootstrap"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/logos_git-icon.svg"
+            alt="Git"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/logos_sass.svg"
+            alt="Sass"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/vscode-icons_file-type-tailwind-2.svg"
+            alt="Tailwind CSS"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/Vector.png"
+            alt="GitHub"
+            class="tech-icon"
+          />
+          <img
+            src="assets/Figma Assets/Vector-5.png"
+            alt="Scalable vector graphics"
+            class="tech-icon"
+          />
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects-section">
+        <h2 class="section-heading">Projects</h2>
+        <p class="section-subheading">Things we have built so far</p>
+
+        <!-- FIX: wrapper for project cards -->
+        <div class="projects-grid">
+          <div class="project-card card-4">
+            <div class="card-image-wrapper">
+              <img
+                class="card-image"
+                src="https://placehold.co/400x200/cccccc/333333?text=Project+4"
+                alt="Project 4"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Project Title goes here</h3>
+              <p>
+                Project description goes here. This is a paragraph of text that
+                can be used to describe the project briefly.
+              </p>
+            </div>
+          </div>
+          <div class="project-card card-5">
+            <div class="card-image-wrapper">
+              <img
+                class="card-image"
+                src="https://placehold.co/400x200/cccccc/333333?text=Project+5"
+                alt="Project 5"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Project Title goes here</h3>
+              <p>
+                Project description goes here. This is a paragraph of text that
+                can be used to describe the project briefly.
+              </p>
+            </div>
+          </div>
+          <div class="project-card card-6">
+            <div class="card-image-wrapper">
+              <img
+                class="card-image"
+                src="https://placehold.co/400x200/cccccc/333333?text=Project+6"
+                alt="Project 6"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Project Title goes here</h3>
+              <p>
+                Project description goes here. This is a paragraph of text that
+                can be used to describe the project briefly.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-footer">
+          <a href="projects.html" class="more-btn">More Projects</a>
+        </div>
+      </section>
+
+      <!-- Contact CTA Section -->
+      <section class="contact-cta-section">
+        <div class="contact-cta">
+          <h2>Let's build something amazing together.</h2>
+          <p>Whether you have a project in mind, a question, or just want to connect, feel free to reach out.</p>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <img
+              src="assets/SynaxisA-logo-light-theme.png"
+              alt="SynaxisA Logo"
+              class="logo"
+            />
+          </div>
+          <div class="footer-contact">
+            <p>+234 81 123-4567-89</p>
+            <p>info@synaxisa.com</p>
+          </div>
+          <div class="social-icons">
+            <a href="https://github.com" aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://twitter.com" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://linkedin.com" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <ul class="footer-bottom-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="techstack.html">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <p class="copyright">
+            Copyright 2025 SynaxisA. All rights reserved. Dev by SynaxisA Team
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeSwitcher = document.querySelector(".theme-switcher");
+        if (!themeSwitcher) return;
+
+        const toggleTheme = () => {
+          document.body.classList.toggle("dark-mode");
+          // persist choice
+          try {
+            localStorage.setItem(
+              "synaxisa-darkmode",
+              document.body.classList.contains("dark-mode") ? "1" : "0"
+            );
+          } catch (e) {}
+        };
+
+        themeSwitcher.addEventListener("click", toggleTheme);
+
+        themeSwitcher.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleTheme();
+          }
+        });
+
+        // restore saved theme
+        try {
+          if (localStorage.getItem("synaxisa-darkmode") === "1") {
+            document.body.classList.add("dark-mode");
+          }
+        } catch (e) {}
+      });
+    </script>
+  </body>
 </html>

@@ -99,7 +99,7 @@ SynaxisA/
 
 ## Team Roles  
 
-- **Home** → Charity  
+- **Home** → Faith 
 - **About** → Ayima  
 - **Tech Stack** → Faith  
 - **Projects** → Dominion  
