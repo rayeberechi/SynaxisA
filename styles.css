@@ -512,6 +512,73 @@ body.dark-mode .tech-card {
 }
 
 
+/* contact style */
+ .contact{
+            background-color: var(--primary-bg);
+            display: flex;
+            gap: 20px;
+            font:  Inter, Poppins, sans-serif;
+        }
+        .info{
+           
+            padding: 1rem;
+        }
+        address{
+        margin: 5px;
+        padding: 7px;
+        border-radius: 15px;
+        height: auto;
+       }
+       a{
+        text-decoration: none;
+        color: var(--text-color);
+       }
+       a:hover{
+        color: var(--primary-accent);
+       }
+       
+       input{
+        border: 1px solid black;
+        border-radius: 5px;
+        gap: 5px;
+         padding: 10px;
+         margin-bottom: 10px; 
+       }
+       .formin{
+        background-color:var(--card-gradient-1) ;
+        padding:20px ;
+        width: 70%;
+        text-align: center;
+        place-items: center;
+        border-radius: 15px;
+        object-fit: contain;
+        height: 251px;
+        border-top: var(--subtle-text);
+        border-left: var(--subtle-text);
+        box-shadow: var(--text-color);
+        overflow: hidden;
+        backdrop-filter: blur(4px);
+        .p{
+          text-align: center;
+        }
+       }
+       input:hover{
+        cursor:text;
+       }
+       button{
+        
+        border-radius: 5px;
+        padding: 4px;
+        cursor: pointer;
+       
+       }
+       button:hover{
+        background-color: var(--secondary-bg);
+       }
+
+      
+
+
 @media (max-width: 768px) {
   .navbar .container {
     flex-direction: column;
