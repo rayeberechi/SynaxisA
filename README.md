@@ -1,151 +1,73 @@
-# SynaxisA – Group Portfolio
+# SynaxisA - Group Portfolio
 
-## Overview  
-Welcome to the **SynaxisA Group Portfolio Project**.  
-
-We are a team of 5 working together to build a **collaborative developer portfolio** that reflects our skills, creativity, and teamwork.  
-
-This README serves as a **development guide** for contributors. It will be updated at the end of the project with a polished version.  
+## Overview
+Welcome to **SynaxisA**, a collaborative portfolio project built by a team of five passionate and skilled developers. This project serves as a showcase of our combined abilities in web development, demonstrating our commitment to teamwork, creativity, and technical excellence.
 
 ---
 
-## Design System  
+## Live Demo & Screenshots
+Check out our live site to see our work in action. The portfolio is fully responsive and features a dark/light mode toggle.
 
-### Fonts  
-- **Primary Fonts:** Inter, Poppins (from Google Fonts)  
+**Live Link:** [https://synaxisa.netlify.app/](https://synaxisa.netlify.app/)
 
-### Color Palette  
+### Screenshots
 
-**Light Theme**  
-- Primary Background: `#F0F0F0`  
-- Text & UI Elements: `#1A1A1A`  
-- Primary Accent: `#8A2BE2`  
-- Secondary Accent / Hover: `#A960E9`  
-- Subtle Text: `#666666`  
-
-**Dark Theme**  
-- Primary Background: `#1A1A1A`  
-- Text & UI Elements: `#FFFFFF`  
-- Primary Accent: `#8A2BE2`  
-- Secondary Accent / Hover: `#A960E9`  
-- Subtle Text: `#CCCCCC`  
-
----
-
-## Project Structure  
-
-
-```
-SynaxisA/
-│
-├── index.html # Home page
-├── about.html # About us page
-├── techstack.html # Tech stack page
-├── projects.html # Projects showcase
-├── contact.html # Contact page with form
-│
-├── assets/ # All images and logo files
-├── style.css # Main stylesheet
-│
-└── README.md # This file
-```
+![Page Overview](./Assets/SynaxisA-Screenshot.png)
 
 
 ---
 
-## Contribution Guidelines  
-
-### Branching  
-- Everyone should clone the repo and work on their local machine.  
-- Push changes to a **new branch** (not directly to `main`).  
-- Your branch name should reference your name and the section you are working on e.g `Faith-TechStack`.  
-- When satisfied with your changes, create a **Pull Request (PR)** for review.    
-
-### Commits  
-- Use clear commit messages:  
-  - `feat: added navbar`  
-  - `fix: corrected color in hero section`  
-  - `docs: updated readme`  
-
-### Pull Requests  
-- Always create PRs into `main`.  
-
-### Assets  
-- Place all images and logo files directly in `/assets/`  
-- Name assets to be descriptive `faith-pfpic.jpg`, `SynaxisA-logo-light-theme.png`  
+## Project Features
+Our portfolio includes the following key pages, each with a unique design and purpose:
+* **Home:** A welcoming landing page that introduces the project and our team.
+* **About:** An in-depth look at each team member, highlighting individual skills and contributions.
+* **Tech Stack:** A comprehensive overview of the technologies, languages, and frameworks we used to build this project.
+* **Projects:** A dedicated section to showcase the projects we've built.
+* **Contact:** A functional contact form for visitors to reach out to us.
 
 ---
 
-## Site Structure  
+## Design and Technology
+This portfolio was built with a focus on a clean, modern design and robust web technologies.
 
-- **Home** – Overview of all sections, navigation links  
-- **About** – Group introduction + individual highlights  
-- **Tech Stack** – Tools, languages, and frameworks  
-- **Projects** – Showcase projects or article with descriptions and links  
-- **Contact** – Model + a contact form  
+### **Fonts**
+We used the **Inter** and **Poppins** font families from Google Fonts to maintain a consistent and readable typography.
 
----
+### **Styling**
+The entire site is styled with plain CSS, including a smooth dark/light mode toggle for a personalized user experience.
 
-## Next Steps  
-
-- We will be using **HTML/CSS** for this project while honing React skills by watching the shared tutorial.  
-- **Deadline:** Everyone is to complete their assigned section by **Thursday**.  
-- **Review 1:** We'll meet on Thursday, 7PM to give feedback and mop up improvements by Friday.  
-- **Final Review:** Saturday.  
-- **Merge & Submit:** Sunday.  
-- **Next Week:** Convert project to React.  
+### **Key Technologies**
+* **HTML5**: For semantic and well-structured page content.
+* **CSS3**: For all styling, layout, and responsive design.
+* **JavaScript**: To handle interactive elements and the theme-switching functionality.
+* **Git & GitHub**: For collaborative version control and project management.
 
 ---
 
-## Team Roles  
+## Getting Started
+To view this project locally, follow these simple steps:
 
-- **Home** → Faith 
-- **About** → Ayima  
-- **Tech Stack** → Faith  
-- **Projects** → Dominion  
-- **Contact** → Abayomi  
-
-## Workflow Summary
-1. Clone repo & create a branch  
-2. Make changes only to your section  
-3. Commit with a clear message  
-4. Push to your branch  
-5. Open a Pull Request into `main`
-
----
-
-# Getting Started  
-## Clone repo
-  ```
-  git clone https://github.com/rayeberechi/SynaxisA.git
-  cd SynaxisA
-  ```
-
-## Create branch for your section
-  ```
-  git checkout -b yourname-section
-  ```
-
-## Work, then push
-  ```
-  git add .
-  git commit -m "feat: built tech stack section"
-  git push origin yourname-section
-  ```
-
-## Submit PR
-- When done, for review and merge.
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/rayeberechi/SynaxisA.git](https://github.com/rayeberechi/SynaxisA.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd SynaxisA
+    ```
+3.  **Open the files:**
+    Open the `index.html` file in your preferred web browser to view the project.
 
 ---
 
-## Assets
-
-1. Logo is in /assets/ as "SynaxisA-logo-light-theme.png" or "SynaxisA-logo-dark-theme.png"
-2. Team profile pictures and other images should go in /assets/
+## Team
+* **Faith** - Home & Tech Stack
+* **Ayima** - About
+* **Dominion** - Projects
+* **Abayomi** - Contact
+* **Charity** - Home
 
 ---
 
 ## Credits
-
-- SynaxisA Team – Software Engineering, Frontend Track
-- Built with ❤️ at PORA Academy
+Built with ❤️ by the **SynaxisA Team** during our Software Engineering journey at PORA Academy.
