@@ -557,20 +557,26 @@ body.dark-mode .tech-card {
 
 .team {
   padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  align-items: stretch;
 }
 
 .team-card {
-  background: var(--bg);
-  border: 1px solid var(--subtle);
+  background: var(--card-bgbg);
+  border: 1px solid var(--secondary-bg);
   border-radius: 12px;
   text-align: center;
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -580,12 +586,24 @@ body.dark-mode .tech-card {
 }
 
 .team-card img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  margin-bottom: 1rem;
+  margin:0 auto 1rem;
+  display: block;
   object-fit: cover;
 }
+
+/* Added a truncate to adjust long text for equal card height */
+.team-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--subtle-text);
+  font-size: 0.95rem;
+  margin-bottom: 0;
 
 .cta {
   text-align: center;
@@ -603,4 +621,65 @@ body.dark-mode .tech-card {
 
 .btn:hover {
   background: var(--hover);
+}
+
+/*Added a stylling section just for my about-cta.btn*/
+
+.about-cta {
+  display: flex;              
+  flex-direction: column;     
+  justify-content: center;    
+  align-items: center;        
+  text-align: center;         
+  padding: 4rem 2rem;
+  min-height: 50vh;           
+  background-color: var(--secondary-bg); 
+  border-radius: 15px;        
+  gap: 1.5rem;                
+}
+
+.about-cta h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-accent);
+  margin: 0;
+}
+
+.about-cta p {
+  font-size: 1.25rem;
+  color: var(--subtle-text);
+  margin: 0;
+  max-width: 600px;
+}
+
+.about-cta .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-cta .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .about-cta {
+    padding: 3rem 1rem;
+  }
+  .about-cta h2 {
+    font-size: 2rem;
+  }
+  .about-cta p {
+    font-size: 1rem;
+  }
+  .about-cta .btn {
+    padding: 10px 20px;
+  }
 }

@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | SynaxisA</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- this is the navbar which can be included on all pages -->
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">SynaxisA</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="techstack.html">Tech Stack</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SynaxisA Portfolio</title>
+
+    <link rel="icon" type="image/png" href="assets/logo-favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-left">
+        <img
+          src="assets/SynaxisA-logo-light-theme.png"
+          alt="Synaxis Logo"
+          class="logo"
+        />
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="techstack.html">Tech Stack</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <!-- Theme switcher is a div that will be toggled by JS -->
+        <div
+          class="theme-switcher"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+          title="Toggle theme"
+        ></div>
+      </div>
+    </header>
 
   <!-- Hero Section -->
   <section class="about-hero">
@@ -64,15 +91,90 @@
     </div>
   </section>
 
-  <!-- Call-to-Action -->
-  <section class="cta">
-    <p>Curious about what we’ve built together?</p>
-    <a href="projects.html" class="btn">See Our Projects</a>
-  </section>
+  <!-- Call-to-Action section -->
+  <section class="about-cta">
+    <div class="about-cta-container">
+  <h2>Curious about what we have built together?</h2>
+  <p>See our projects and explore how we can collaborate.</p>
+  <a href="projects.html" class="btn">See Our Projects</a>
+  </div>
+</section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 SynaxisA Group. All rights reserved.</p>
-  </footer>
-</body>
+   <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <img
+              src="assets/SynaxisA-logo-light-theme.png"
+              alt="SynaxisA Logo"
+              class="logo"
+            />
+          </div>
+          <div class="footer-contact">
+            <p>+234 81 123-4567-89</p>
+            <p>info@synaxisa.com</p>
+          </div>
+          <div class="social-icons">
+            <a href="https://github.com" aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://twitter.com" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://linkedin.com" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <ul class="footer-bottom-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="techstack.html">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <p class="copyright">
+            Copyright 2025 SynaxisA. All rights reserved. Dev by SynaxisA Team
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeSwitcher = document.querySelector(".theme-switcher");
+        if (!themeSwitcher) return;
+
+        const toggleTheme = () => {
+          document.body.classList.toggle("dark-mode");
+          // persist choice
+          try {
+            localStorage.setItem(
+              "synaxisa-darkmode",
+              document.body.classList.contains("dark-mode") ? "1" : "0"
+            );
+          } catch (e) {}
+        };
+
+        themeSwitcher.addEventListener("click", toggleTheme);
+
+        themeSwitcher.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleTheme();
+          }
+        });
+
+        // restore saved theme
+        try {
+          if (localStorage.getItem("synaxisa-darkmode") === "1") {
+            document.body.classList.add("dark-mode");
+          }
+        } catch (e) {}
+      });
+    </script>
+  </body>
 </html>
+
