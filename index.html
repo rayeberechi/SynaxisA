@@ -20,7 +20,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="navbar">
+   <header class="navbar">
+       <button class="navbar-toggle" aria-label="Open menu" id="hamburger">
+       ☰
+      </button>
       <div class="navbar-left">
         <img
           src="assets/SynaxisA-logo-light-theme.png"
@@ -28,8 +31,9 @@
           class="logo"
         />
       </div>
+    
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="sidebar">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="techstack.html">Tech Stack</a></li>
@@ -38,7 +42,6 @@
         </ul>
       </nav>
       <div class="nav-right">
-        <!-- Theme switcher is a div that will be toggled by JS -->
         <div
           class="theme-switcher"
           role="button"
@@ -141,8 +144,12 @@
 
       <!-- Projects Section -->
       <section class="projects-section">
-        <h2 class="section-heading">Projects</h2>
-        <p class="section-subheading">Things we have built so far</p>
+        <div class="projects-header">
+          <h2>Our Projects</h2>
+          <p>
+            A selection of projects we've worked on together
+          </p>
+        </div>
 
         <!-- FIX: wrapper for project cards -->
         <div class="projects-card-box">
@@ -287,6 +294,48 @@
           }
         } catch (e) {}
       });
+
+      document.addEventListener("DOMContentLoaded", () => {
+    // ...existing theme switcher code...
+
+    // Hamburger menu toggle
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const nav = document.querySelector('header .navbar nav');
+    if (navbarToggle && nav) {
+      navbarToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+    }
+  });
+
+    const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+
+// Toggle menu when hamburger is clicked
+hamburger.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+// Check screen size on load & resize
+function handleResize() {
+  if (window.innerWidth <= 768) {
+    // On mobile/tablet → hide sidebar by default
+    sidebar.classList.remove('active');
+    hamburger.style.display = "block";
+  } else {
+    // On desktop → show sidebar permanently
+    sidebar.classList.add('active');
+    hamburger.style.display = "none"; 
+  }
+}
+
+// Run on page load
+handleResize();
+
+// Run whenever screen is resized
+window.addEventListener('resize', handleResize);
+
+
     </script>
   </body>
 </html>

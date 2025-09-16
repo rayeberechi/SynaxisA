@@ -18,24 +18,34 @@
   <body>
     <!-- Navbar -->
     <header class="navbar">
+       <button class="navbar-toggle" aria-label="Open menu" id="hamburger">
+       ☰
+      </button>
       <div class="navbar-left">
         <img
           src="assets/SynaxisA-logo-light-theme.png"
-          alt="SynaxisA Logo"
+          alt="Synaxis Logo"
           class="logo"
         />
       </div>
+    
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="sidebar">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="techstack.html" class="active">Tech Stack</a></li>
+          <li><a href="techstack.html">Tech Stack</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-right">
-        <div class="theme-switcher"></div>
+        <div
+          class="theme-switcher"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+          title="Toggle theme"
+        ></div>
       </div>
     </header>
 
@@ -275,13 +285,80 @@
       </div>
     </footer>
 
-    <script>
+   <script>
       document.addEventListener("DOMContentLoaded", () => {
         const themeSwitcher = document.querySelector(".theme-switcher");
-        themeSwitcher.addEventListener("click", () => {
+        if (!themeSwitcher) return;
+
+        const toggleTheme = () => {
           document.body.classList.toggle("dark-mode");
+          // persist choice
+          try {
+            localStorage.setItem(
+              "synaxisa-darkmode",
+              document.body.classList.contains("dark-mode") ? "1" : "0"
+            );
+          } catch (e) {}
+        };
+
+        themeSwitcher.addEventListener("click", toggleTheme);
+
+        themeSwitcher.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleTheme();
+          }
         });
+
+        // restore saved theme
+        try {
+          if (localStorage.getItem("synaxisa-darkmode") === "1") {
+            document.body.classList.add("dark-mode");
+          }
+        } catch (e) {}
       });
+
+      document.addEventListener("DOMContentLoaded", () => {
+    // ...existing theme switcher code...
+
+    // Hamburger menu toggle
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const nav = document.querySelector('header .navbar nav');
+    if (navbarToggle && nav) {
+      navbarToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+    }
+  });
+
+    const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+
+// Toggle menu when hamburger is clicked
+hamburger.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+// Check screen size on load & resize
+function handleResize() {
+  if (window.innerWidth <= 768) {
+    // On mobile/tablet → hide sidebar by default
+    sidebar.classList.remove('active');
+    hamburger.style.display = "block";
+  } else {
+    // On desktop → show sidebar permanently
+    sidebar.classList.add('active');
+    hamburger.style.display = "none"; 
+  }
+}
+
+// Run on page load
+handleResize();
+
+// Run whenever screen is resized
+window.addEventListener('resize', handleResize);
+
+
     </script>
   </body>
 </html>
