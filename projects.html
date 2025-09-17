@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SynaxisA Portfolio</title>
+
+    <link rel="icon" type="image/png" href="assets/logo-favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+       
+
+        .main-content {
+            width: 70%;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+        
+        .section-title {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .section-title h1 {
+            font-size: 40px;
+            font-weight: 800;
+            margin: 0;
+        }
+        
+        .section-title p {
+            color: var(--subtle-text);
+            font-size: 20px;
+            font-weight: 300;
+            margin: 0;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 24px;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 192px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 16px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;   /* Ensures the image covers the area without distortion */
+            border-radius: 8px;  /* Matches the container's rounded corners */
+            display: block;      /* Removes unwanted space below the image */
+        }
+        
+        .card-content {
+            padding: 8px;
+        }
+        
+        .card-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: var(--subtle-text);
+            margin-bottom: 16px;
+        }
+
+        .tech-stack {
+            font-size: 12px;
+            color: var(--subtle-text);
+            margin-bottom: 16px;
+        }
+
+        .tech-stack span {
+            color: var(--primary-accent);
+            font-weight: 500;
+        }
+        
+        .card-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .card-actions a {
+            flex: 1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s ease-in-out;
+
+            /* New styles for icons and text alignment */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+        }
+        
+        .card-actions a:hover {
+            background-color: var(--secondary-accent);
+        }
+
+        .card-actions a svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+        
+        .live-preview {
+            object-fit: cover;
+            display: block;
+        }
+        /* Specific SVG fill/stroke colors for light mode */
+        .card-actions .live-preview-icon {
+            stroke: var(--text-color); /* External link icon is a stroke */
+            fill: none;
+        }
+        .card-actions .view-code-icon {
+            fill: var(--text-color); /* GitHub icon is a fill */
+            stroke: none;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        
+        .toggle-button {
+            padding: 12px 32px;
+            background-color: var(--primary-accent);
+            color: var(--card-bg);
+            font-weight: 500;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .toggle-button:hover {
+            background-color: var(--secondary-accent);
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #additional-projects {
+            margin-top: 24px;
+        }
+
+          /* Media Queries for Responsiveness */
+        @media screen and (min-width: 768px) {
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .project-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            .header-logo, .header-nav {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Custom scrollbar for a nicer look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--secondary-bg);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--subtle-text);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-accent);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+   <header class="navbar">
+       <button class="navbar-toggle" aria-label="Open menu" id="hamburger">
+       ☰
+      </button>
+      <div class="navbar-left">
+        <img
+          src="assets/SynaxisA-logo-light-theme.png"
+          alt="Synaxis Logo"
+          class="logo"
+        />
+      </div>
+    
+      <nav>
+        <ul class="nav-links" id="sidebar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="techstack.html">Tech Stack</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <div
+          class="theme-switcher"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+          title="Toggle theme"
+        ></div>
+      </div>
+    </header>
+
+   
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Projects Section -->
+        <section class="section-title">
+            <h1>Projects</h1>
+            <p>Things I've built so far</p>
+        </section>
+
+        <!-- Project Grid -->
+        <div class="project-grid">
+
+            <!-- Project Card 1: E-commerce Site -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="/SynaxisA/Assets/Rectangle 4.png" alt="Modern E-commerce Platform">
+                </div>
+                <div class="card-content">
+                    <h3>Modern E-commerce Platform</h3>
+                    <p>A responsive e-commerce application built with a focus on clean design and user experience. It features dynamic product listings, a shopping cart, and a secure checkout process.</p>
+                    <p class="tech-stack">Tech stack: <span>HTML, CSS, JavaScript, React</span></p>
+                    <div class="card-actions">
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="live-preview-icon"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            Live Preview
+                        </a>
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="view-code-icon"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.309 3.492.997.107-.775.418-1.309.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.771.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.09 8.199-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2: Interactive Weather App -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="/SynaxisA/Assets/Rectangle 6.png" alt="Interactive Weather App">
+                </div>
+                <div class="card-content">
+                    <h3>Interactive Weather App</h3>
+                    <p>A weather application that fetches real-time data from a public API. It demonstrates skills in API integration, state management, and displaying complex data in a simple, user-friendly interface.</p>
+                    <p class="tech-stack">Tech stack: <span>HTML, CSS, JavaScript, Node.js</span></p>
+                    <div class="card-actions">
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="live-preview-icon"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            Live Preview
+                        </a>
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="view-code-icon"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.309 3.492.997.107-.775.418-1.309.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.771.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.09 8.199-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3: Portfolio Website -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="/SynaxisA/Assets/Rectangle 8.png" alt="Personal Portfolio Website">
+                </div>
+                <div class="card-content">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>A showcase of my skills as a front-end developer, featuring a responsive, multi-page layout. The site includes sections for projects, skills, and contact information, built with a component-based approach.</p>
+                    <p class="tech-stack">Tech stack: <span>HTML, CSS, JavaScript, Vue.js</span></p>
+                    <div class="card-actions">
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="live-preview-icon"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            Live Preview
+                        </a>
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="view-code-icon"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.309 3.492.997.107-.775.418-1.309.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.771.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.09 8.199-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container for additional cards, initially hidden -->
+        <div id="additional-projects" class="project-grid hidden">
+            <!-- Project Card 4: To-Do List App -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="/SynaxisA/Assets/Rectangle 12.png" alt="To-Do List Application">
+                </div>
+                <div class="card-content">
+                    <h3>To-Do List Application</h3>
+                    <p>A classic to-do list application that demonstrates fundamental JavaScript concepts like DOM manipulation, event handling, and managing data with local storage.</p>
+                    <p class="tech-stack">Tech stack: <span>HTML, CSS, JavaScript</span></p>
+                    <div class="card-actions">
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="live-preview-icon"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            Live Preview
+                        </a>
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="view-code-icon"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.309 3.492.997.107-.775.418-1.309.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.771.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.09 8.199-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5: Photo Gallery -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="/SynaxisA/Assets/Rectangle 13.png" alt="Dynamic Image Gallery">
+                </div>
+                <div class="card-content">
+                    <h3>Dynamic Image Gallery</h3>
+                    <p>An elegant image gallery with lazy loading and lightbox functionality. The project showcases skills in fetching data from an external API and creating a smooth, user-friendly browsing experience.</p>
+                    <p class="tech-stack">Tech stack: <span>HTML, CSS, JavaScript</span></p>
+                    <div class="card-actions">
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="live-preview-icon"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            Live Preview
+                        </a>
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="view-code-icon"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.309 3.492.997.107-.775.418-1.309.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.771.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.09 8.199-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 6: Movie Search App -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="/SynaxisA/Assets/Rectangle 14.png" alt="Movie Search Application">
+                </div>
+                <div class="card-content">
+                    <h3>Movie Search Application</h3>
+                    <p>A single-page application that allows users to search for movies and view details. This project highlights a strong understanding of asynchronous programming and handling complex JSON data.</p>
+                    <p class="tech-stack">Tech stack: <span>HTML, CSS, JavaScript, jQuery</span></p>
+                    <div class="card-actions">
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="live-preview-icon"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            Live Preview
+                        </a>
+                        <a href="#" class="live-preview">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="view-code-icon"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.309 3.492.997.107-.775.418-1.309.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.771.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.09 8.199-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Button to show/hide more projects -->
+        <div class="button-container">
+            <button id="toggle-projects" class="toggle-button">
+                Show More Projects
+            </button>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <img
+              src="assets/SynaxisA-logo-light-theme.png"
+              alt="SynaxisA Logo"
+              class="logo"
+            />
+          </div>
+          <div class="footer-contact">
+            <p>+234 81 123-4567-89</p>
+            <p>info@synaxisa.com</p>
+          </div>
+          <div class="social-icons">
+            <a href="https://github.com" aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://twitter.com" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://linkedin.com" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <ul class="footer-bottom-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="techstack.html">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <p class="copyright">
+            Copyright 2025 SynaxisA. All rights reserved. Dev by SynaxisA Team
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+
+        // Get the button and the additional projects container by their IDs
+        const toggleButton = document.getElementById('toggle-projects');
+        const additionalProjects = document.getElementById('additional-projects');
+        
+        // Add a click event listener to the button
+        toggleButton.addEventListener('click', () => {
+            // Check if the additional projects are currently hidden
+            if (additionalProjects.classList.contains('hidden')) {
+                // If hidden, remove the 'hidden' class to show them
+                additionalProjects.classList.remove('hidden');
+                // Change the button text
+                toggleButton.textContent = 'Show Less Projects';
+            } else {
+                // If visible, add the 'hidden' class to hide them
+                additionalProjects.classList.add('hidden');
+                // Change the button text back
+                toggleButton.textContent = 'Show More Projects';
+            }
+        });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeSwitcher = document.querySelector(".theme-switcher");
+        if (!themeSwitcher) return;
+
+        const toggleTheme = () => {
+          document.body.classList.toggle("dark-mode");
+          // persist choice
+          try {
+            localStorage.setItem(
+              "synaxisa-darkmode",
+              document.body.classList.contains("dark-mode") ? "1" : "0"
+            );
+          } catch (e) {}
+        };
+
+        themeSwitcher.addEventListener("click", toggleTheme);
+
+        themeSwitcher.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleTheme();
+          }
+        });
+
+        // restore saved theme
+        try {
+          if (localStorage.getItem("synaxisa-darkmode") === "1") {
+            document.body.classList.add("dark-mode");
+          }
+        } catch (e) {}
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+    // ...existing theme switcher code...
+
+    // Hamburger menu toggle
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const nav = document.querySelector('header .navbar nav');
+    if (navbarToggle && nav) {
+      navbarToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+    }
+  });
+
+    const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+
+// Toggle menu when hamburger is clicked
+hamburger.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+// Check screen size on load & resize
+function handleResize() {
+  if (window.innerWidth <= 768) {
+    // On mobile/tablet → hide sidebar by default
+    sidebar.classList.remove('active');
+    hamburger.style.display = "block";
+  } else {
+    // On desktop → show sidebar permanently
+    sidebar.classList.add('active');
+    hamburger.style.display = "none"; 
+  }
+}
+
+// Run on page load
+handleResize();
+
+// Run whenever screen is resized
+window.addEventListener('resize', handleResize);
+
+
+    </script>
+  </body>
+</html>
