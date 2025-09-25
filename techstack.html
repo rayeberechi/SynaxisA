@@ -4,40 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SynaxisA | Tech Stack</title>
-    <link rel="icon" type="image/png" href="assets/logo-favicon.png" />
+
+    <link rel="icon" type="image/png" href="Assets/logo-favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Navbar -->
     <header class="navbar">
-      <div class="navbar-left">
-        <img
-          src="assets/SynaxisA-logo-light-theme.png"
-          alt="SynaxisA Logo"
-          class="logo"
-        />
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="techstack.html" class="active">Tech Stack</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-right">
-        <div class="theme-switcher"></div>
+      <div class="navbar-container container">
+        <div class="navbar-left">
+          <a href="index.html">
+            <img
+              src="Assets/SynaxisA-logo-light-theme.png"
+              alt="Synaxis Logo"
+              class="logo"
+            />
+          </a>
+        </div>
+
+        <nav class="nav-desktop">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="techstack.html" class="active">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-right">
+          <button
+            class="theme-switcher"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="hamburger" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
     </header>
+    <div class="mobile-menu">
+      <button class="close-menu" aria-label="Close Menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <nav class="nav-mobile">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="techstack.html" class="active">Tech Stack</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- Tech Stack Section -->
     <main class="techstack-container">
@@ -222,18 +254,15 @@
         <div class="tech-card">
           <img
             src="assets/Figma Assets/Vector-5.png"
-            alt="SVG"
+            alt="Redux"
             class="tech-icon"
           />
-          <h3>Vector Graphics</h3>
+          <h3>Redux</h3>
           <p>
-            Resolution-independent graphics for crisp visuals across devices.
+            A predictable state container for JavaScript apps, often used with
+            React.
           </p>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/SVG"
-            target="_blank"
-            >Learn More</a
-          >
+          <a href="https://redux.js.org/" target="_blank">Learn More </a>
         </div>
       </div>
     </main>
@@ -244,7 +273,7 @@
         <div class="footer-content">
           <div>
             <img
-              src="assets/SynaxisA-logo-light-theme.png"
+              src="Assets/SynaxisA-logo-light-theme.png"
               alt="SynaxisA Logo"
               class="logo"
             />
@@ -254,9 +283,15 @@
             <p>info@synaxisa.com</p>
           </div>
           <div class="social-icons">
-            <a href="https://github.com"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://twitter.com" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://linkedin.com" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
           </div>
         </div>
         <div class="footer-bottom">
@@ -275,13 +310,6 @@
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const themeSwitcher = document.querySelector(".theme-switcher");
-        themeSwitcher.addEventListener("click", () => {
-          document.body.classList.toggle("dark-mode");
-        });
-      });
-    </script>
+    <script src="script.js" defer></script>
   </body>
 </html>

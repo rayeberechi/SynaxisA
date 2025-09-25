@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SynaxisA Portfolio</title>
 
-    <link rel="icon" type="image/png" href="assets/logo-favicon.png" />
+    <link rel="icon" type="image/png" href="Assets/logo-favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -21,15 +21,48 @@
   </head>
   <body>
     <header class="navbar">
-      <div class="navbar-left">
-        <img
-          src="assets/SynaxisA-logo-light-theme.png"
-          alt="Synaxis Logo"
-          class="logo"
-        />
+      <div class="navbar-container container">
+        <div class="navbar-left">
+          <a href="index.html">
+            <img
+              src="Assets/SynaxisA-logo-light-theme.png"
+              alt="Synaxis Logo"
+              class="logo"
+            />
+          </a>
+        </div>
+
+        <nav class="nav-desktop">
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="techstack.html">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-right">
+          <button
+            class="theme-switcher"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="hamburger" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
-      <nav>
-        <ul class="nav-links">
+    </header>
+
+    <div class="mobile-menu">
+      <button class="close-menu" aria-label="Close Menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <nav class="nav-mobile">
+        <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="techstack.html">Tech Stack</a></li>
@@ -37,17 +70,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="nav-right">
-        <!-- Theme switcher is a div that will be toggled by JS -->
-        <div
-          class="theme-switcher"
-          role="button"
-          tabindex="0"
-          aria-label="Toggle theme"
-          title="Toggle theme"
-        ></div>
-      </div>
-    </header>
+    </div>
 
     <main>
       <!-- Hero Section -->
@@ -62,7 +85,7 @@
         </div>
         <div class="hero-image">
           <img
-            src="assets/logo-favicon.png"
+            src="Assets/logo-favicon.png"
             alt="Group Profile Picture"
             class="grp-pic"
           />
@@ -77,63 +100,63 @@
         </p>
         <div class="tech-icon-pack">
           <img
-            src="assets/Figma Assets/vscode-icons_file-type-html.svg"
+            src="Assets/Figma Assets/vscode-icons_file-type-html.svg"
             alt="HTML"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/vscode-icons_file-type-css.svg"
+            src="Assets/Figma Assets/vscode-icons_file-type-css.svg"
             alt="CSS"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/vscode-icons_file-type-js-official.svg"
+            src="Assets/Figma Assets/vscode-icons_file-type-js-official.svg"
             alt="JavaScript"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/logos_react.svg"
+            src="Assets/Figma Assets/logos_react.svg"
             alt="React"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/cib_greensock.svg"
+            src="Assets/Figma Assets/cib_greensock.svg"
             alt="Greensock"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/vscode-icons_file-type-vscode-1.svg"
+            src="Assets/Figma Assets/vscode-icons_file-type-vscode-1.svg"
             alt="VScode"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/logos_bootstrap.png"
+            src="Assets/Figma Assets/logos_bootstrap.png"
             alt="Bootstrap"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/logos_git-icon.svg"
+            src="Assets/Figma Assets/logos_git-icon.svg"
             alt="Git"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/logos_sass.svg"
+            src="Assets/Figma Assets/logos_sass.svg"
             alt="Sass"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/vscode-icons_file-type-tailwind-2.svg"
+            src="Assets/Figma Assets/vscode-icons_file-type-tailwind-2.svg"
             alt="Tailwind CSS"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/Vector.png"
+            src="Assets/Figma Assets/Vector.png"
             alt="GitHub"
             class="tech-icon"
           />
           <img
-            src="assets/Figma Assets/Vector-5.png"
-            alt="Scalable vector graphics"
+            src="Assets/Figma Assets/Vector-5.png"
+            alt="Redux"
             class="tech-icon"
           />
         </div>
@@ -144,53 +167,51 @@
         <h2 class="section-heading">Projects</h2>
         <p class="section-subheading">Things we have built so far</p>
 
-        <!-- FIX: wrapper for project cards -->
         <div class="projects-card-box">
           <div class="project-card card-4">
-            <div class="card-image-wrapper">
+            <div class="card-image">
               <img
-                class="card-image"
-                src="https://placehold.co/400x200/cccccc/333333?text=Project+4"
-                alt="Project 4"
+                src="Assets/Rectangle 14.png"
+                alt="Movie Search Application"
               />
             </div>
             <div class="card-content">
-              <h3>Project Title goes here</h3>
+              <h3>Movie Search Application</h3>
               <p>
-                Project description goes here. This is a paragraph of text that
-                can be used to describe the project briefly.
+                A single-page application that allows users to search for movies
+                and view details. This project highlights a strong understanding
+                of asynchronous programming and handling complex JSON data...
               </p>
             </div>
           </div>
+
           <div class="project-card card-5">
-            <div class="card-image-wrapper">
-              <img
-                class="card-image"
-                src="https://placehold.co/400x200/cccccc/333333?text=Project+5"
-                alt="Project 5"
-              />
+            <div class="card-image">
+              <img src="Assets/Rectangle 12.png" alt="To-Do List Application" />
             </div>
             <div class="card-content">
-              <h3>Project Title goes here</h3>
+              <h3>To-Do List Application</h3>
               <p>
-                Project description goes here. This is a paragraph of text that
-                can be used to describe the project briefly.
+                A classic to-do list application that demonstrates fundamental
+                JavaScript concepts like DOM manipulation, event handling, and
+                managing data with local storage...
               </p>
             </div>
           </div>
+
           <div class="project-card card-6">
-            <div class="card-image-wrapper">
+            <div class="card-image">
               <img
-                class="card-image"
-                src="https://placehold.co/400x200/cccccc/333333?text=Project+6"
-                alt="Project 6"
+                src="Assets/Rectangle 4.png"
+                alt="Modern E-commerce Platform"
               />
             </div>
             <div class="card-content">
-              <h3>Project Title goes here</h3>
+              <h3>Modern E-commerce Platform</h3>
               <p>
-                Project description goes here. This is a paragraph of text that
-                can be used to describe the project briefly.
+                A responsive e-commerce application built with a focus on clean
+                design and user experience. It features dynamic product
+                listings, a shopping cart, and a secure checkout process...
               </p>
             </div>
           </div>
@@ -214,12 +235,13 @@
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div>
             <img
-              src="assets/SynaxisA-logo-light-theme.png"
+              src="Assets/SynaxisA-logo-light-theme.png"
               alt="SynaxisA Logo"
               class="logo"
             />
@@ -242,7 +264,7 @@
         </div>
         <div class="footer-bottom">
           <ul class="footer-bottom-nav">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="techstack.html">Tech Stack</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -255,38 +277,6 @@
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const themeSwitcher = document.querySelector(".theme-switcher");
-        if (!themeSwitcher) return;
-
-        const toggleTheme = () => {
-          document.body.classList.toggle("dark-mode");
-          // persist choice
-          try {
-            localStorage.setItem(
-              "synaxisa-darkmode",
-              document.body.classList.contains("dark-mode") ? "1" : "0"
-            );
-          } catch (e) {}
-        };
-
-        themeSwitcher.addEventListener("click", toggleTheme);
-
-        themeSwitcher.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            toggleTheme();
-          }
-        });
-
-        // restore saved theme
-        try {
-          if (localStorage.getItem("synaxisa-darkmode") === "1") {
-            document.body.classList.add("dark-mode");
-          }
-        } catch (e) {}
-      });
-    </script>
+    <script src="script.js" defer></script>
   </body>
 </html>

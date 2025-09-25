@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SynaxisA Portfolio</title>
+    <title>SynaxisA Portfolio - Contact</title>
 
-    <link rel="icon" type="image/png" href="assets/logo-favicon.png" />
+    <link rel="icon" type="image/png" href="Assets/logo-favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -21,94 +21,144 @@
   </head>
   <body>
     <header class="navbar">
-      <div class="navbar-left">
-        <img
-          src="assets/SynaxisA-logo-light-theme.png"
-          alt="Synaxis Logo"
-          class="logo"
-        />
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="techstack.html">Tech Stack</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-right">
-        <!-- Theme switcher is a div that will be toggled by JS -->
-        <div
-          class="theme-switcher"
-          role="button"
-          tabindex="0"
-          aria-label="Toggle theme"
-          title="Toggle theme"
-        ></div>
+      <div class="navbar-container container">
+        <div class="navbar-left">
+          <a href="index.html">
+            <img
+              src="Assets/SynaxisA-logo-light-theme.png"
+              alt="Synaxis Logo"
+              class="logo"
+            />
+          </a>
+        </div>
+
+        <nav class="nav-desktop">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="techstack.html">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-right">
+          <button
+            class="theme-switcher"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="hamburger" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
     </header>
-    <div class="contact">
+    <div class="mobile-menu">
+      <button class="close-menu" aria-label="Close Menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <nav class="nav-mobile">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="techstack.html" class="active">Tech Stack</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Contact Section -->
+    <main class="contact">
       <div class="info">
         <h3>Let's discuss your project</h3>
         <p>
-          we are excited to hear about your project and explore how we can work
+          We are excited to hear about your project and explore how we can work
           together to bring your ideas to life. Please fill out the form below
-          or reach out directly, and I’ll get back to you as soon as possible.
-          Let’s create something amazing!
+          or reach out directly, and we’ll get back to you as soon as possible.
         </p>
-        <span>
-          <address>
-            <p>
-              Address:<br />
-              Across Nigeria
-            </p>
-          </address>
-        </span>
-        <span>
-          <address>
-            <p>
-              My Email:<br />
-              <a>info@synaxisa.com</a>
-            </p>
-          </address>
-        </span>
-        <span>
-          <address>
-            <p>
-              Call us on:<br />
-              <a>+234 81 123-4567-89</a>
-            </p>
-          </address>
-        </span>
-      </div>
-      <div class="form">
-        <form action="fill">
-          <h3 class="p">Contact Us</h3>
-          <p class="p">
-            Please fill out the form below with your details and a brief message
-            about your project. I’ll review your information and get back to you
-            promptly to discuss how we can collaborate. Your privacy is
-            important, and your information will be kept confidential.
+        <address>
+          <p><strong>Address:</strong><br />Across Nigeria</p>
+          <p>
+            <strong>Email:</strong><br /><a href="mailto:info@synaxisa.com"
+              >info@synaxisa.com</a
+            >
           </p>
+          <p>
+            <strong>Call us on:</strong><br /><a href="tel:+23481123456789"
+              >+234 81 123-4567-89</a
+            >
+          </p>
+        </address>
+      </div>
+
+      <div class="form">
+        <form action="#" method="post">
+          <h3>Contact Us</h3>
+          <p>
+            Please fill out the form below with your details and a brief
+            message. We’ll review your information and get back to you promptly.
+          </p>
+
           <div class="form-inner">
-            <input type="text" placeholder="Name:" /><br />
-            <input type="email" placeholder="Email:" /><br />
-            <input type="text" placeholder="Location:" /><br />
-            <input type="number" placeholder="Budget:" />
-            <br />
-            <textarea placeholder="Message" rows="2"> </textarea><br />
-            <button class="submit-btn">Submit</button>
+            <label for="name" class="sr-only">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Name"
+              required
+            />
+
+            <label for="email" class="sr-only">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              required
+            />
+
+            <label for="location" class="sr-only">Location</label>
+            <input
+              id="location"
+              name="location"
+              type="text"
+              placeholder="Location"
+            />
+
+            <label for="budget" class="sr-only">Budget</label>
+            <input
+              id="budget"
+              name="budget"
+              type="number"
+              placeholder="Budget"
+            />
+
+            <label for="message" class="sr-only">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Message"
+              rows="3"
+            ></textarea>
+
+            <button type="submit" class="submit-btn">Submit</button>
           </div>
         </form>
       </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div>
             <img
-              src="assets/SynaxisA-logo-light-theme.png"
+              src="Assets/SynaxisA-logo-light-theme.png"
               alt="SynaxisA Logo"
               class="logo"
             />
@@ -129,13 +179,14 @@
             ></a>
           </div>
         </div>
+
         <div class="footer-bottom">
           <ul class="footer-bottom-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="techstack.html">Tech Stack</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
           <p class="copyright">
             Copyright 2025 SynaxisA. All rights reserved. Dev by SynaxisA Team
@@ -144,38 +195,6 @@
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const themeSwitcher = document.querySelector(".theme-switcher");
-        if (!themeSwitcher) return;
-
-        const toggleTheme = () => {
-          document.body.classList.toggle("dark-mode");
-          // persist choice
-          try {
-            localStorage.setItem(
-              "synaxisa-darkmode",
-              document.body.classList.contains("dark-mode") ? "1" : "0"
-            );
-          } catch (e) {}
-        };
-
-        themeSwitcher.addEventListener("click", toggleTheme);
-
-        themeSwitcher.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            toggleTheme();
-          }
-        });
-
-        // restore saved theme
-        try {
-          if (localStorage.getItem("synaxisa-darkmode") === "1") {
-            document.body.classList.add("dark-mode");
-          }
-        } catch (e) {}
-      });
-    </script>
+    <script src="script.js" defer></script>
   </body>
 </html>
